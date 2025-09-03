@@ -1,0 +1,19 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Local files for testing purposes
+local/*
+
+# Ignore mac indexing files
+.DS_Store
+
+# Ignore VSCode settings
+.vscode/*
