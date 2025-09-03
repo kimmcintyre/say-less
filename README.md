@@ -1,6 +1,6 @@
 # say-less
 
-Quickly capture the YouTube zeitgeist by automatically collecting links to videos that can be fed into NotebookLM.
+Captures the YouTube zeitgeist by collecting links to videos that can be fed into NotebookLM.
 
 ## Prerequisites
 
@@ -66,5 +66,5 @@ cp ~/Downloads/pc-api-.*.json ./local/secrets/service-account.json
 Execute the python script
 
 ```
-uv run main.py
+uv run say-less.py gather --configPath "./local/configs.json" --serviceAccountPath "./local/secrets/service-account.json"
 ```
