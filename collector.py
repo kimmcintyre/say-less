@@ -17,7 +17,8 @@ class Collector():
             scopes=SCOPES
         )
         self.yt_service: Resource = build("youtube", 'v3', credentials=creds)
-        self.channel_handles = utils.get_configs(config_path or settings.DEFAULT_CONFIG_FILE)["channel_handles"]
+        configs = utils.get_configs(config_path or settings.DEFAULT_CONFIG_FILE)
+        self.channel_handles = configs["channel_handles"]
         self.log = logging.getLogger(self.__class__.__name__)
 
     def _get_uploads_playlist_id(self, yt_service: Resource, channel_handle: str) -> str:

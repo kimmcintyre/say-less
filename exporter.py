@@ -14,8 +14,9 @@ class Exporter():
             scopes=SCOPES
         )
         self.sheets_service: Resource = build("sheets", 'v4', credentials=creds)
-        self.spreadsheet_id: str = utils.get_configs(config_path or settings.DEFAULT_CONFIG_FILE)["spreadsheet"]["id"]
-        self.spreadsheet_name: str = utils.get_configs(config_path or settings.DEFAULT_CONFIG_FILE)["spreadsheet"]["name"]
+        configs = utils.get_configs(config_path or settings.DEFAULT_CONFIG_FILE)
+        self.spreadsheet_id: str = configs["spreadsheet"]["id"]
+        self.spreadsheet_name: str = configs["spreadsheet"].get("name", settings.DEFAULT_SHEET_NAME)
         self.log = logging.getLogger(self.__class__.__name__)
 
     def create_sheet(self, sheets_service: Resource, spreadsheet_id: str, table_data: Table) -> None:

@@ -48,6 +48,7 @@ Create a `./local/config.json` file
 {
     "spreadsheet": {
         "id": "SPREADSHEET_ID"
+        "name": "SHEET_NAME",
     },
     "channel_handles" : [
         "@ChannelTag",

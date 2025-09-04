@@ -1,12 +1,15 @@
 from datetime import datetime, timedelta
 import pytz
 import json
+import settings 
+from jsonschema import validate
 
 def get_configs(filePath: str) -> dict:
     """ Reads the contents of the config file """
     configs: dict = {}
     with open(f'{filePath}') as f:
         configs = json.load(f)
+        validate(instance=configs, schema=settings.CONFIG_SCHEMA)
     return configs
 
 def get_yesterday_date() -> datetime:
