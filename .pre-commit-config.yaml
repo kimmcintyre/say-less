@@ -1,0 +1,9 @@
+repos:
+  - repo: local
+    hooks:
+      - id: black
+        name: black
+        description: Runs Python Black on commit for consistent formatting
+        entry: uvx black
+        language: system
+        files: \.py$
